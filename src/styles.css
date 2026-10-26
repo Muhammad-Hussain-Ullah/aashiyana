@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Outfit:wght@400;500;600;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root { font-family: 'DM Sans', ui-sans-serif, system-ui, sans-serif; color: #17231e; background: #f6f8f3; font-synthesis: none; text-rendering: optimizeLegibility; }
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; min-width: 320px; }
+button, input, select, textarea { font: inherit; }
+button { cursor: pointer; }
+::selection { background: #c8dc68; color: #17231e; }
+@layer components {
+  .eyebrow { @apply text-xs font-bold uppercase tracking-[0.18em] text-forest; }
+  .section-title { @apply font-display text-4xl font-semibold leading-[1.08] tracking-[-0.04em] text-ink sm:text-5xl; }
+  .subheading { @apply font-display text-2xl font-semibold tracking-tight text-ink; }
+  .label { @apply block text-xs font-bold uppercase tracking-[0.12em] text-slate-500; }
+  .control { @apply w-full rounded-xl border border-[#dce4d9] bg-white px-3.5 py-3 text-sm text-ink outline-none transition placeholder:text-slate-400 focus:border-forest focus:ring-4 focus:ring-[#0c7566]/10; }
+  .field-icon { @apply absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-400; }
+}
+@keyframes fade-in { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
+.animate-fade-in { animation: fade-in .35s ease both; }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; } }
